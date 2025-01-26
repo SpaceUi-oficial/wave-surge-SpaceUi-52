@@ -1,0 +1,61 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #3b82f6, #9333ea, #34d399);
+  overflow: hidden;
+}
+
+.wave-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  animation: waveMove 8s infinite ease-in-out;
+}
+
+.wave:nth-child(1) {
+  z-index: 3;
+  animation-delay: 0s;
+}
+
+.wave:nth-child(2) {
+  z-index: 2;
+  animation-delay: 1.5s;
+}
+
+.wave:nth-child(3) {
+  z-index: 1;
+  animation-delay: 3s;
+}
+
+@keyframes waveMove {
+  0%, 100% {
+    transform: translateY(10);
+    -webkit-transform: translateY(10);
+    -moz-transform: translateY(10);
+    -ms-transform: translateY(10);
+    -o-transform: translateY(10);
+}
+  50% {
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+}
+}
